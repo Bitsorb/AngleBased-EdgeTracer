@@ -256,7 +256,7 @@ def register():
     km = wm.keyconfigs.addon.keymaps.new(name="Mesh", space_type="EMPTY")
     kmi = km.keymap_items.new(EdgeTracerOperator.bl_idname, "T", "PRESS", shift=True)
     addonKeymaps.append(km)
-    
+
     # Setting up menu
     bpy.types.VIEW3D_MT_select_edit_mesh.append(menuFunction)
 
@@ -269,7 +269,7 @@ def unregister():
     for km in addonKeymaps:
         wm.keyconfigs.addon.keymaps.remove(km)
     del addonKeymaps[:]
-    
+
     # Cleaning up menu
     bpy.types.VIEW3D_MT_select_edit_mesh.remove(menuFunction)
 
