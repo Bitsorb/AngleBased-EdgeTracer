@@ -1,4 +1,4 @@
-# AngleBased-EdgeTracer 1.0.0
+# AngleBased-EdgeTracer 1.0.2
 # Copyright (C) 2020 Pouya Nakhaie Ahooie
 
 # ######################## BEGIN GPL LICENSE BLOCK ########################
@@ -22,8 +22,8 @@
 bl_info = {
     "name": "AngleBased-EdgeTracer",
     "author": "Pouya Nakhaie Ahooie",
-    "version": (1, 0, 0),
-    "blender": (2, 80, 0),
+    "version": (1, 0, 2),
+    "blender": (3, 1, 2),
     "location": "View3D > Select > Edge Tracer",
     "support": "COMMUNITY",
     "warning": "",
@@ -199,7 +199,7 @@ class EdgeTracerOperator(bpy.types.Operator):
             self.mode = "Manual"
 
     # Create properties
-    mode = EnumProperty(
+    mode : EnumProperty(
         name="Mode",
         description="Angle value mode.",
         items=[
@@ -208,7 +208,7 @@ class EdgeTracerOperator(bpy.types.Operator):
         ]
     )
 
-    angleInDegrees = FloatProperty(
+    angleInDegrees : FloatProperty(
         name="Allowed Angle",
         description="Maximum angle between edges in degrees.",
         default=angleRange,
